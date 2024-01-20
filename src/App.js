@@ -23,7 +23,15 @@ import FriendsList from './components/FriendsList';
 function App() {
   return (
     <div className="App">
-      <h2>Client Auth Project</h2>
+      <header>
+        <h2>Friends Database</h2>
+        <Link className="link" to="/">Login</Link>
+        <Link className="link" to="friendslist">Friends List</Link>
+        <Link className="link" to="friends/add">Add Friend</Link>
+        <Link className="link" to="logout">Logout</Link>
+
+
+      </header>
      <Routes> 
       <Route path="/" element={ <Login />}/>
       <Route path="/friendsList" element={<FriendsList />}/>

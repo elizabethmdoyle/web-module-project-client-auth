@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 
-
 const AddFriend = () => {
 
     const [cred, setCred] = useState({
@@ -17,10 +16,12 @@ const AddFriend = () => {
     }
     // console.log(cred)
 
+
+
     return (
         <div>
             <h2>Add Friend</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">Username</label>
                     <input name="username" id="username" onChange={handleChange}></input>
