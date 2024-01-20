@@ -1,17 +1,30 @@
-import React from 'react';
-import {Route, Redirect} from "react-router-dom"
-
-const PrivateRoute = ({component: Component, ...rest}) => {
+import React , {Fragment} from "react";
+import { Routes, Navigate } from "react-router-dom";
 
 
-    return  ( <Route {...rest} render={(props) => {
-            if(localStorage.getItem('token')) {
-                return <Component {...props} />;
-            } else {
-                return <Redirect to="/login" />
-            }
-        }}/>)
-    
-}
 
-export default PrivateRoute
+const PrivateRoute = ({ component: Component, children, ...rest }) => {
+  // const Component = props.component
+  return (
+    <Fragment>
+    <Routes
+      {...rest}
+      // exact path=""
+      render={(props) => {
+         if (localStorage.getItem("token")) {
+        //   return <Navigate to="/" />
+        // } 
+        
+        
+        // {
+        //   // if token is in localstorage, render the given component
+          return <Component {...props} />;
+        } else {
+          return <Navigate to="/login" />;
+        }
+      }}
+    /></Fragment>
+  );
+};
+
+export default PrivateRoute;

@@ -10,7 +10,7 @@ import FriendsList from './components/FriendsList';
 
 import Logout from './components/Logout';
 
-import PrivateRoute from './components/PrivateRoute';
+// import PrivateRoute from './components/PrivateRoute';
 
 // const Login = () => {
 //   return(<h2>Login</h2>)
@@ -39,7 +39,7 @@ function App() {
      <Routes> 
       <Route path="/" element={ <Login />}/>
       <>
-      <PrivateRoute path="/friendsList" element={<FriendsList />}/>
+      <Route path="/friendsList" component={<FriendsList />}/>
       </>
       <Route path="/friends/add" element={<AddFriend />}/>
       <Route path="/logout" element={<Logout />}/>
