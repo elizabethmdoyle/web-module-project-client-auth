@@ -8,6 +8,8 @@ import AddFriend from './components/AddFriend';
 
 import FriendsList from './components/FriendsList';
 
+import Logout from './components/Logout';
+
 // const Login = () => {
 //   return(<h2>Login</h2>)
 // }
@@ -36,6 +38,8 @@ function App() {
       <Route path="/" element={ <Login />}/>
       <Route path="/friendsList" element={<FriendsList />}/>
       <Route path="/friends/add" element={<AddFriend />}/>
+      <Route path="/logout" element={<Logout />}/>
+
       </Routes>
       </div>
     
