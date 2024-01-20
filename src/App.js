@@ -24,21 +24,11 @@ function App() {
   return (
     <div className="App">
       <h2>Client Auth Project</h2>
-      <ul>
-      <li>
-          <Link to="/">Login</Link>
-        </li> 
-        <li>
-          <Link to="/friendsList">FriendsList</Link>
-        </li>
-        <li>
-          <Link to="/friends/add">Add Friend</Link>
-        </li>
-      </ul>
+     <Routes> 
       <Route path="/" element={ <Login />}/>
       <Route path="/friendsList" element={<FriendsList />}/>
       <Route path="/friends/add" element={<AddFriend />}/>
-
+      </Routes>
       </div>
     
   );
