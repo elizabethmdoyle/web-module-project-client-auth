@@ -2,6 +2,20 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
+
+// age
+// : 
+// 30
+// email
+// : 
+// "rachel@friends.com"
+// id
+// : 
+// "rftql"
+// name
+// : 
+// "Rachel Green"
+
 const FriendsList = () => {
 
     const [friends, setFriends] = useState([]);
@@ -13,6 +27,7 @@ const FriendsList = () => {
         })
             .then(res => {
                 console.log(res)
+                setFriends(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -23,12 +38,13 @@ const FriendsList = () => {
         <div>
             <h2>FriendsList</h2>
             <ul>
-              <li>Name - age - email</li>  
-              <li>Name - age - email</li>  
-              <li>Name - age - email</li>  
-              <li>Name - age - email</li>  
-              <li>Name - age - email</li>  
-              <li>Name - age - email</li>  
+            {
+                friends.map((friend) => {
+                    return(<li>{friend.name} - {friend.age} - {friend.email}</li>)
+                })
+            }
+           
+           
             </ul>
         </div>
 )}
